@@ -1,0 +1,28 @@
+﻿@model Customer
+<h3 style="text-align:center">Customer Details</h3>
+<table align="center" border="1">
+    <tr><td>@Html.DisplayNameFor(c=>c.Custid)</td>
+        <td>@Html.DisplayFor(c=>Model.Custid)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(c=>c.Name)</td>
+        <td>@Html.DisplayFor(c=>Model.Name)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(c=>c.Balance)</td>
+        <td>@Html.DisplayFor(c=>Model.Balance)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(c=>c.City)</td>
+        <td>@Html.DisplayFor(c=>Model.City)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(c=>c.Status)</td>
+        <td>@Html.DisplayFor(c=>Model.Status)</td>
+    </tr>
+    <tr>
+        <td colspan="6" align="center">
+            <a asp-action="DisplayCustomers">Back To List</a>
+        </td>
+    </tr>
+</table>

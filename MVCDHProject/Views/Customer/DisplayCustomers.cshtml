@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Customer>
+<h3 style="text-align:center">Customers Details</h3>
+<table align="center" border="1">
+    <tr>
+        <th>@Html.DisplayNameFor(c => c.Custid)</></th>
+        <th>@Html.DisplayNameFor(c => c.Name)</th>
+        <th>@Html.DisplayNameFor(c => c.Balance)</th>
+        <th>@Html.DisplayNameFor(c => c.City)</th>
+        <th>@Html.DisplayNameFor(c => c.Status)</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (Customer customer in Model)
+    {
+        <tr>
+            <td align="center">@Html.DisplayFor(c => customer.Custid)</td>
+            <td>@Html.DisplayFor(c=>customer.Name)</td>
+            <td>@Html.DisplayFor(c=>customer.Balance)</td>
+            <td>@Html.DisplayFor(c=>customer.City)</td>
+            <td>@Html.DisplayFor(c=>customer.Status)</td>
+            <td>
+                <a asp-action="DisplayCustomer" asp-route-Custid="@customer.Custid">View</a>
+                <a asp-action="EditCustomer" asp-route-Custid="@customer.Custid">Edit</a>
+                <a asp-action="DeleteCustomer" asp-route-Custid="@customer.Custid"
+                              onclick="return confirm('Are you sure delete the record?')">Delete</a>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td colspan="6" align="center">
+            <a asp-action="AddCustomer" >Add New Customer</a>
+        </td>
+    </tr>
+</table>
